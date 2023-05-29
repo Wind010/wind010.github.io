@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Tools</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=500, user-scalable=no">
+    <!-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css"> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/tools.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).bind('mobileinit', function () {
+            $.mobile.loadingMessage = false;
+        })
+    </script>
+    <script src="https://code.jquery.com/mobile/1.5.0-rc1/jquery.mobile-1.5.0-rc1.min.js" integrity="sha256-c3VbCrdCtTHmXYAuxRT4D0Cy5VC/0zBnXVRIvJiV9xo=" crossorigin="anonymous"></script>
+    
+    <script src="../js/tools.js"></script>
+    
+</head>
+<body>
+    <div id="wrapper">
+        <br>
+        <select id="process" name="process">
+            <option value="url_encode">URL Encode</option>
+            <option value="url_decode">URL Decode</option>
+            <option value="remove_whitespace">Remove Whitespace</option>
+            <option value="base64_encode">Base64 Encode</option>
+            <option value="base64_decode">Base64 Decode</option>
+          </select> 
+
+        <textarea id="user_input" name="user_input"></textarea>
+
+        <button id="copy_text" title="Copy Result 🖖"><i class="fa-solid fa-copy"></i> Copy Result</button>
+        <br>
+        <br>
+        <textarea readonly id="commands"></textarea>
+        <textarea readonly id="result" placeholder="Result shows up here"></textarea>
+        <p><b style="font-size: 1.3em">What this does</b></p>
+        <p>This services is designed to be a two-way conversion to encode and decode:
+            <ul>
+                <li>URL Encoded Strings</li>
+                <li>Base64 Encoded Strings</li>
+            </ul>
+            Simply select the type of conversion you want to perform and enter your input. 
+            The Copy Result button will automatically copy the result to your clipboard, if 
+            your browser supports it, otherwise it will give you an easy way to copy the result from a popup.
+        </p>
+        <p>
+            You can also drag a file into the input field to convert a file to a Base64 string.
+            All of these conversions happen on your machine, without ever uploading anything to this server!
+        </p>
+    </div>
+</body>
+</html>
