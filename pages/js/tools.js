@@ -71,6 +71,28 @@ $(document).ready(function () {
                 break;
             case 'remove_whitespace':
                 newVal = inputVal.replace(/\s/g, '');
+                break;
+            case 'md5':
+                newVal = CryptoJS.MD5(inputVal);
+                break;
+            case 'sha128':
+                newVal = CryptoJS.SHA1(inputVal);
+                break;
+            case 'sha224':
+                newVal = CryptoJS.SHA224(inputVal).toString();
+                break;
+            case 'sha256':
+                newVal = CryptoJS.SHA256(inputVal).toString();
+                break;
+            case 'sha384':
+                newVal = CryptoJS.SHA384(inputVal).toString();
+                break;
+            case 'sha512':
+                newVal = CryptoJS.SHA512(inputVal).toString();
+                break;
+            case 'ripemd160':
+                newVal = CryptoJS.RIPEMD160(inputVal).toString();
+                break;
         }
         $('#result').text(newVal);
     }
@@ -78,4 +100,44 @@ $(document).ready(function () {
 });
 
 
- 
+function toggleView() {
+    var wrapper = document.getElementById('div_wrapper');
+    var icon = document.getElementById('icon_button_div');
+    var div_input = document.getElementById('div_input');
+    var div_output = document.getElementById('div_output');
+
+    if (wrapper.style.flexDirection == 'column') {
+        wrapper.style.flexDirection = 'row';
+        icon.classList.add("fa-rotate-90");
+
+        div_input.classList.remove("div_full")
+        div_output.classList.remove("div_full")
+
+        div_input.classList.add("div_half")
+        div_output.classList.add("div_half")
+
+    }
+    else {
+        wrapper.style.flexDirection = 'column';
+        icon.classList.remove("fa-rotate-90");
+
+
+        
+        div_input.classList.remove("div_half")
+        div_output.classList.remove("div_half")
+
+        div_input.classList.add("div_full")
+        div_output.classList.add("div_full")
+
+    }
+
+    // var wrapper = $('#div_wrapper')
+    // if (wrapper.css('flex-direction') == 'column') {
+    //     wrapper.css('flex-direction', 'row');
+    //     icon.addClass("fa-rotate-90");
+    // }
+    // else {
+    //     wrapper.css('flex-direction', 'column');
+    //     icon.removeClass("fa-rotate-90");
+    // }
+  }

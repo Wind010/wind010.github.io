@@ -1,34 +1,82 @@
 body {
-    background: rgb(246, 246, 246);
+    background: rgb(36, 36, 36);
     margin: 0px;
     padding: 0 20px 0 20px;
     min-width: 400px;
-    float: center;
+    /* float: center; */
 
 }
 
-#wrapper {
-    float: center;
+#container {
     margin: auto;
-    max-width: 800px;
-    margin: auto;
+    /* max-width: 800px; */
 }
+
+#div_options {
+    display: flex;
+}
+  
+.left {
+    margin-right: auto;
+}
+
+
+#div_options {
+    display: flex;
+    flex-direction: row;
+}
+
+
+#div_wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+#div_options,
+#div_input,
+#div_output {
+  flex-grow: 1;
+  background-color: lightgray;
+  margin: 5px;
+  padding: 5px 0 0 5px;
+  border-radius: 6px;
+}
+
+
+/* #div_input,
+#div_output {
+    width: 50%;
+} */
+
+
+.div_half {
+    width: 50%;
+}
+
+
+.div_full {
+    width: 100%;
+}
+
+
 
 body,
 textarea {
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Consolas', sans-serif;
     border-radius: 6px;
 }
 
 #user_input,
 #commands,
 #result {
-    width: 100%;
-    margin: 0px 0px 10px -10px;
+    width: 98%;
+    margin: 50px 10px 50px 10px;
     border: 1px solid rgb(200, 200, 200);
-    padding: 6px 10px;
+    /* padding: 6px 10px; */
     background: #fff;
     font-size: 1.1em;
+    justify-content: center;
+
 }
 
 #process {
@@ -36,16 +84,16 @@ textarea {
 }
 
 #user_input {
-    height: 80px;
-}
-
-#commands {
-    height: 100px;
+    height: 300px;
 }
 
 #result {
-    height: 400px;
+    height: 300px;
     overflow-x: visible;
+}
+
+#commands {
+    height: 50%;
 }
 
 
